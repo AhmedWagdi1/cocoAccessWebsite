@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
+@import "tailwindcss";
+
+
+:root {
+  /* Elegant Color Palette inspired by the Hibiscus and Coconut Logo */
+  --primary-pink: #ec4899;      /* Hibiscus flower pink */
+  --primary-pink-hover: #db2777;
+  --primary-pink-light: #fdf2f8;
+  
+  --primary-brown: #78350f;     /* Rich coconut shell brown */
+  --primary-brown-light: #fef3c7; /* Light sand/coconut flesh cream */
+  --primary-brown-dark: #451a03;
+  
+  --coconut-cream: #fafaf9;     /* Off-white, soft background */
+  
+  --accent-teal: #0d9488;       /* Teal from earrings tassel */
+  --accent-orange: #ea580c;     /* Orange tassel accent */
+  --accent-blue: #0284c7;       /* Blue tassel accent */
+  
+  --background: #fafaf9;
+  --foreground: #1c1917;
+  
+  --font-sans: 'Outfit', sans-serif;
+  --font-serif: 'Playfair Display', serif;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans);
+  --font-serif: var(--font-serif);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+}
+
+/* Glassmorphism utility */
+.glass-effect {
+  background: rgba(250, 250, 249, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(120, 53, 15, 0.08);
+}
+
+.dark-glass-effect {
+  background: rgba(69, 26, 3, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(253, 242, 248, 0.1);
+}
+
+/* Custom transitions and scroll behaviors */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Smooth fade-in animation for products */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
